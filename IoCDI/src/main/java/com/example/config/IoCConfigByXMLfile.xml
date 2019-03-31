@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+
+	<bean id="student1Bean" class="com.example.beans.Student" scope="prototype">
+		<property name="fullName" value="Le Van A"></property>
+		<property name="age" value="20"></property>
+	</bean>
+
+	<!-- <bean id="student2Bean" class="com.example.beans.Student" scope="prototype">
+		<constructor-arg name="fullName" value="Nguyen Van B"></constructor-arg>
+		<constructor-arg name="age" value="22"></constructor-arg>
+	</bean> -->
+	
+	<bean id="student2Bean" class="com.example.beans.Student" scope="prototype"></bean>
+
+	<bean id="lectureOneBean" class="com.example.beans.LectureOne" scope="prototype"></bean>
+
+	<bean id="lectureObjBean" class="com.example.beans.LectureObj" scope="prototype">
+		<constructor-arg ref="lectureOneBean"></constructor-arg>
+	</bean>
+
+</beans>
